@@ -2,7 +2,7 @@ import React from 'react';
 import { Check } from 'lucide-react';
 import "./About.css";
 // Corrected import: Images are default exports, do not use { }
-import image from "../../assets/yashik.png"; 
+import image from "../../assets/DSC04786.JPG"; 
 
 const About = () => {
   const credentials = [
@@ -29,8 +29,8 @@ const About = () => {
           {/* Sidebar with Image */}
           <div className="founder-sidebar">
             <div className="image-frame">
-              <div className="frame-label">Homework Faster"</div>
-              <div className="frame-sub">MOHAMMED YASHIK. FOUNDER OF UPEL LEARNING</div>
+              <div className="frame-label">Mohammed Yashik Sahib"</div>
+              <div className="frame-sub">Biomedical Enginner. Founder of melaninBlind</div>
               <img 
                 src={image} 
                 alt="Mohammed Yashik B" 
