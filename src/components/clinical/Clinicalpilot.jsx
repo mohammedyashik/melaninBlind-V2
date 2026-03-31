@@ -13,35 +13,36 @@ const Clinicalpilot = () => {
   const features = [
     {
       icon: <Target size={20} />,
-      title: "Skin-Tone Blind by Design",
-      desc: "Electrical impedance is not affected by melanin. The same accuracy on Fitzpatrick I as on Fitzpatrick VI — built into the physics, not into a training dataset.",
+      title: "Skin-Tone Independent by Design",
+      desc: "Electrical impedance measurement is unaffected by melanin. Consistent performance across all Fitzpatrick types — defined by physics, not dependent on training data.",
     },
     {
       icon: <Battery size={20} />,
-      title: "Completely Battery-Free",
-      desc: "NFC harvests all power from any smartphone. No charging, no replacement, no hardware failure from a dead battery. Works in any clinic, anywhere on earth.",
+      title: "Fully Battery-Free Operation",
+      desc: "Powered entirely through NFC from a standard smartphone. No charging, no maintenance, and no dependency on external power sources.",
     },
     {
       icon: <Clock size={20} />,
-      title: "60-Second Result",
-      desc: "From patch application to triage decision in under 60 seconds. No lab results. No specialist appointment. Any GP acts on the result immediately.",
+      title: "60-Second Clinical Output",
+      desc: "From application to triage decision in under one minute. Enables immediate clinical action without laboratory delay or specialist dependency.",
     },
     {
       icon: <Smartphone size={20} />,
-      title: "Any NFC Smartphone",
-      desc: "No proprietary reader. No Bluetooth. No app subscription. Any Android or iOS device with NFC reads the patch. The hardware your GP already owns is all that is needed.",
+      title: "Compatible with Standard Smartphones",
+      desc: "Operates with any NFC-enabled device. No proprietary reader, no pairing, and no additional infrastructure required.",
     },
     {
       icon: <DollarSign size={20} />,
-      title: "$2 Cost of Goods",
-      desc: "At manufacturing scale, each patch costs $1.50–$2 to produce. GP channel: $8. Hospital: $15. Global health: $5. Accessible to every care setting on earth.",
+      title: "Low-Cost, Scalable Model",
+      desc: "Designed for high-volume deployment. Cost structure enables use across primary care, hospital systems, and global health programmes.",
     },
     {
       icon: <ShieldCheck size={20} />,
-      title: "FDA-Cleared Pathway Identified",
-      desc: "CDSCO Class B in India — targeting Q1 2027. FDA 510(k) via substantial equivalence to Nevisense 3.0 for export markets. Regulatory strategy mapped from day one.",
+      title: "Defined Regulatory Pathway",
+      desc: "Aligned with CDSCO Class B in India and FDA 510(k) pathways via established impedance-based precedents.",
     },
   ];
+
   return (
     <>
       <section className="clinical-section">
@@ -50,15 +51,13 @@ const Clinicalpilot = () => {
           <header className="clinical-header">
             <div className="sci-label">— CLINICAL PILOT PROGRAMME</div>
             <h1 className="clinical-title">
-              Be part of the 500-lesion study that validates MelaninBlind for
-              regulatory submission.
+              Participate in a 500-lesion clinical study supporting regulatory validation.
             </h1>
             <p className="clinical-subtitle">
-              We are recruiting GP clinics, hospital outpatient departments, and
-              community health programmes in Chennai and South India for our
-              Phase 1 clinical pilot. Your participation provides the
-              histopathology-verified dataset that enables CDSCO Class B
-              clearance — and gives your clinic first access to the technology.
+              We are onboarding GP clinics, hospital outpatient departments, and
+              community health programmes across Chennai and South India. This
+              pilot generates histopathology-correlated data required for CDSCO
+              Class B submission, while providing early clinical access to the system.
             </p>
           </header>
 
@@ -68,11 +67,10 @@ const Clinicalpilot = () => {
               <div className="clinical-icon-box">
                 <Calendar size={20} color="#f87171" />
               </div>
-              <h3>3-Month Structured Pilot</h3>
+              <h3>Structured 3-Month Pilot</h3>
               <p>
-                Full protocol support, IEC ethics documentation, and data
-                management provided. Participation requires patient access and
-                biopsy correlation data from your clinic.
+                Standardised protocol, ethics documentation, and data collection
+                framework provided. Clinics contribute patient access and biopsy correlation.
               </p>
             </div>
 
@@ -80,11 +78,10 @@ const Clinicalpilot = () => {
               <div className="clinical-icon-box">
                 <Inbox size={20} color="#fb923c" />
               </div>
-              <h3>Patches Provided Free</h3>
+              <h3>No-Cost Pilot Deployment</h3>
               <p>
-                All MelaninBlind patches are provided at zero cost during the
-                pilot phase. Your clinic contributes the clinical setting,
-                patient access, and follow-up biopsy data.
+                All patches are provided during the study phase. Participating sites
+                provide clinical workflow integration and follow-up data.
               </p>
             </div>
 
@@ -92,11 +89,10 @@ const Clinicalpilot = () => {
               <div className="clinical-icon-box">
                 <FileText size={20} color="#94a3b8" />
               </div>
-              <h3>Co-Authorship on Publication</h3>
+              <h3>Clinical Publication Contribution</h3>
               <p>
-                All participating clinicians receive co-authorship credit on the
-                peer-reviewed clinical study publication. First-mover advantage
-                in the dermatology literature.
+                Participating clinicians are included in authorship of the
+                peer-reviewed study publication, contributing to early clinical evidence generation.
               </p>
             </div>
           </div>
@@ -104,30 +100,28 @@ const Clinicalpilot = () => {
           {/* CTA Button */}
           <div className="clinical-cta">
             <button className="apply-btn">
-              Apply for the Clinical Pilot →
+              Apply for clinical pilot participation →
             </button>
           </div>
 
           {/* Footer Credits */}
           <footer className="clinical-footer">
             <p>
-              Currently incubating at <b>HTIC IIT Madras</b> • Backed by{" "}
-              <b>BIRAC and DST</b> • Targeting CDSCO Class B clearance Q1 2027
+              Incubated at <b>HTIC IIT Madras</b> • Supported by <b>BIRAC and DST</b> • CDSCO Class B submission targeted for 2027
             </p>
           </footer>
         </div>
       </section>
+
       <section className="props-section">
         <div className="props-container">
           <header className="props-header">
             <div className="props-label">— WHY MELANINBLIND</div>
             <h1 className="props-main-title">
-              The only skin cancer triage tool built for every human being on
-              earth.
+              Built for consistent, accessible skin cancer triage.
             </h1>
             <p className="props-subtitle">
-              Not the most expensive. Not the most complex. The most accessible
-              — and the most equitable.
+              Designed to operate across clinical settings — from primary care to global health systems.
             </p>
           </header>
 
