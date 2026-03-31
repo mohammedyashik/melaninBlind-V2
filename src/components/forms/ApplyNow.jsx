@@ -27,14 +27,14 @@ const ApplyNow = () => {
 
     try {
       await sendEmail("template_75rv3mf", {
-        form_type: "Apply Now",
+        form_type: "Clinical Pilot Application",
         name: formData.name,
         email: formData.email,
         linkedin: formData.linkedin,
       });
 
       setStatus("success");
-      setMessage("Application submitted successfully!");
+      setMessage("Application received. Our team will review and respond shortly.");
 
       // clear form
       setFormData({
@@ -45,7 +45,7 @@ const ApplyNow = () => {
     } catch (error) {
       console.error("Email send failed:", error);
       setStatus("error");
-      setMessage("Failed to send application.");
+      setMessage("Submission failed. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -66,8 +66,8 @@ const ApplyNow = () => {
           </div>
 
           <div className="title-section">
-            <h2>Partner with Us</h2>
-            <p>Clinical Pilot & Pre-Incubation Application</p>
+            <h2>Clinical Pilot Application</h2>
+            <p>For clinics, hospitals, and healthcare programmes</p>
           </div>
 
           <div className="field-wrapper">
@@ -86,7 +86,7 @@ const ApplyNow = () => {
               type="email"
               name="email"
               required
-              placeholder="Professional Email"
+              placeholder="Work Email"
               value={formData.email}
               onChange={handleChange}
             />
@@ -97,7 +97,7 @@ const ApplyNow = () => {
               type="url"
               name="linkedin"
               required
-              placeholder="LinkedIn Profile URL"
+              placeholder="LinkedIn or Professional Profile"
               value={formData.linkedin}
               onChange={handleChange}
             />
