@@ -10,13 +10,13 @@ import Partner from "../partner/Partner";
 
 const Home = () => {
   const partners = [
-    { title: 'BIRAC', subtitle: 'Govt of India' },
-    { title: 'DST', subtitle: 'Dept of Science & Technology' },
-    { title: 'IIM Bangalore', subtitle: 'IICDC 2019 National Winner' },
+    { title: 'BIRAC', subtitle: 'Government of India' },
+    { title: 'DST', subtitle: 'Department of Science & Technology' },
+    { title: 'IIM Bangalore', subtitle: 'IICDC National Winner' },
     { title: 'IIM Calcutta', subtitle: 'Incubation Programme' },
-    { title: 'AIC-CCMB', subtitle: 'Incubation · Hyderabad' },
-    { title: 'C-CAMP', subtitle: 'Incubation · Bangalore' },
-    { title: 'La Trobe University', subtitle: 'Melbourne & Sydney' },
+    { title: 'AIC-CCMB', subtitle: 'Medtech Incubation · Hyderabad' },
+    { title: 'C-CAMP', subtitle: 'Bio Incubation · Bangalore' },
+    { title: 'La Trobe University', subtitle: 'Melbourne · Sydney' },
     { title: 'HTIC IIT Madras', subtitle: 'Pre-Incubation 2026', highlight: true },
   ];
 
@@ -26,46 +26,46 @@ const Home = () => {
       name: 'Sarah, 34 AU',
       location: 'BRISBANE, AUSTRALIA',
       skinColor: '#F5D0B4',
-      quote: '"They found two suspicious moles. Both biopsies came back benign. $2,400 spent — and weeks of anxiety. There has to be a way to know — before you cut."',
-      stat: '77% of biopsies come back benign. Most never needed.'
+      quote: '"Two suspicious moles. Two biopsies. Both benign. $2,400 spent — and weeks of anxiety. There has to be a way to know — before you cut."',
+      stat: '77% of biopsies return benign — most never needed.'
     },
     {
       id: '02',
       name: 'Priya, 41 IN',
       location: 'COIMBATORE, INDIA',
       skinColor: '#A6734E',
-      quote: '"The AI app said low risk. By the time I saw a specialist, it had progressed. The tool wasn’t built for my skin tone."',
-      stat: 'AI accuracy on dark skin: 17%. On fair skin: 70%.'
+      quote: '"The AI said low risk. By the time I reached a specialist, it had progressed. The system wasn’t built for my skin tone."',
+      stat: 'AI accuracy on dark skin: ~17%. On fair skin: ~70%.'
     },
     {
       id: '03',
       name: 'Emmanuel, 28 NG',
       location: 'LAGOS, NIGERIA',
       skinColor: '#4A2C1D',
-      quote: '"There is no dermatologist here. My GP made his best guess. Guessing isn’t medicine. It’s hope with a stethoscope."',
-      stat: '1 dermatologist per 1.5M people in many regions.'
+      quote: '"There is no dermatologist here. My GP made the best call he could. Guessing isn’t medicine. It’s hope with a stethoscope."',
+      stat: 'In many regions: 1 dermatologist per 1.5M people.'
     }
   ];
 
   const statsData = [
     {
       value: '1.7M+',
-      description: 'New cases per year — and rising',
+      description: 'New skin cancer cases each year — rising steadily',
       source: 'WHO / GLOBOCAN'
     },
     {
       value: '3B+',
-      description: 'People with no access to a dermatologist',
+      description: 'People without access to a dermatologist',
       source: 'Global health estimates'
     },
     {
       value: '$9.42B',
-      description: 'Global diagnostics market',
+      description: 'Global skin diagnostics market',
       source: 'Precedence Research'
     },
     {
       value: '77%',
-      description: 'Biopsies that come back benign',
+      description: 'Biopsies that return benign results',
       source: 'JAMA Dermatology'
     }
   ];
@@ -92,21 +92,21 @@ const Home = () => {
           <div className="hero-left">
 
             <div className="top-badge">
-              ● MedTech · Built in India · For the world
+              ● MedTech · Built in India · Designed for global use
             </div>
 
             <h1 className="hero-title">
               melaninBlind.<br />
-              <span>Skin cancer triage — rebuilt for every skin tone.</span>
+              <span>Skin cancer triage — built for every skin tone.</span>
             </h1>
 
             <p className="hero-desc">
               A 60-second, battery-free screening system that reads <br />
-              <b>electricity — not colour.</b>
+              <b>electrical signals — not colour.</b>
             </p>
 
             <p className="hero-sub">
-              No imaging. No bias. No specialist.
+              No imaging. No bias. No specialist required.
             </p>
 
             <div className="hero-buttons">
@@ -118,7 +118,7 @@ const Home = () => {
 
           <div className="hero-right">
             <div className="image-wrapper">
-              <img src={heroImage} alt="device" />
+              <img src={heroImage} alt="melaninBlind device" />
               <div className="scan-line"></div>
             </div>
           </div>
@@ -139,13 +139,13 @@ const Home = () => {
 
         <div className="stats-footer">
           <span className="dot">•</span>
-          <span>6+ incubations</span>
+          <span>6+ incubations across medtech institutions</span>
           <span className="dot">•</span>
           <span>₹20L+ non-dilutive grants (prior work)</span>
           <span className="dot">•</span>
           <span>National IICDC Winner</span>
           <span className="dot">•</span>
-          <span>Texas Instruments & DST</span>
+          <span>Supported by Texas Instruments & DST</span>
         </div>
       </section>
 
@@ -156,13 +156,13 @@ const Home = () => {
           <h1>
             Same disease.<br />
             Different outcomes.<br />
-            Because of skin tone.
+            Driven by skin tone.
           </h1>
 
           <p className="description">
             This is not an edge case.<br />
-            This is the global standard.<br /><br />
-            melaninBlind changes this — using physics, not pigment.
+            This is how the system works today.<br /><br />
+            melaninBlind addresses this — using physics, not pigment.
           </p>
         </header>
 
@@ -182,7 +182,7 @@ const Home = () => {
         </div>
 
         <footer className="disclaimer">
-          Based on documented global patterns. Names are illustrative.
+          Based on documented clinical and global health patterns. Names are illustrative.
         </footer>
       </section>
 
