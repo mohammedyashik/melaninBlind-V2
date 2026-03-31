@@ -27,14 +27,14 @@ const Reachout = () => {
 
     try {
       await sendEmail("template_75rv3mf", {
-        form_type: "Reach Out",
+        form_type: "Collaboration Enquiry",
         name: formData.name,
         email: formData.email,
         linkedin: formData.linkedin
       });
 
       setStatus("success");
-      setMessage("Request sent successfully!");
+      setMessage("Request received. We will get back to you shortly.");
 
       setFormData({
         name: "",
@@ -49,7 +49,7 @@ const Reachout = () => {
     } catch (error) {
       console.error("Email send failed:", error);
       setStatus("error");
-      setMessage("Failed to send request.");
+      setMessage("Submission failed. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -65,13 +65,13 @@ const Reachout = () => {
             className="back-link"
             onClick={() => window.history.back()}
           >
-            [ Go Back ]
+            [ Back ]
           </div>
 
           <div className="header-zone">
-            <h2>Reach Out</h2>
+            <h2>Collaboration Enquiry</h2>
             <p className="subtitle">
-              // Scientific & Strategic Collaboration //
+              Partnerships • Research • Clinical • Strategic
             </p>
           </div>
 
@@ -80,7 +80,7 @@ const Reachout = () => {
               type="text"
               name="name"
               required
-              placeholder="YOUR_NAME"
+              placeholder="Full Name"
               value={formData.name}
               onChange={handleChange}
             />
@@ -92,7 +92,7 @@ const Reachout = () => {
               type="email"
               name="email"
               required
-              placeholder="PROFESSIONAL_EMAIL"
+              placeholder="Work Email"
               value={formData.email}
               onChange={handleChange}
             />
@@ -104,7 +104,7 @@ const Reachout = () => {
               type="url"
               name="linkedin"
               required
-              placeholder="LINKEDIN_URL"
+              placeholder="LinkedIn or Professional Profile"
               value={formData.linkedin}
               onChange={handleChange}
             />
@@ -119,7 +119,7 @@ const Reachout = () => {
             {loading ? (
               <div className="dot-pulse"></div>
             ) : (
-              "SEND_REQUEST"
+              "Submit Enquiry"
             )}
           </button>
 
