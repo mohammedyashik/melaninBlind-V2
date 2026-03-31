@@ -29,20 +29,22 @@ const Navbar = () => {
 
       <div className="nav-apply">
         <p>
-          Now accepting clinical pilot partners in India 
+          Now onboarding clinical pilot partners in India
             <span className="apply-text" onClick={() => handleScrollTo("partner")} >
-              Apply for Clinical Trail Partner →
+              Apply as a clinical pilot site →
             </span>
         </p>
       </div>
+
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo" onClick={() => handleScrollTo("about")}>
-        <img src={melaninLogo} alt="MelaninBlind Logo" />
+            <img src={melaninLogo} alt="melaninBlind logo" />
             <span className="logo-text">
-              Melanin<span>Blind</span>
+              melanin<span>Blind</span>
             </span>
           </div>
+
           <div
             className={`hamburger ${menuOpen ? "active" : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}
@@ -51,26 +53,27 @@ const Navbar = () => {
             <span></span>
             <span></span>
           </div>
+
           <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
             <li onClick={() => handleScrollTo("howitworks")}>
-              How it Works
+              How It Works
             </li>
             <li onClick={() => handleScrollTo("science")}>
-              The Science
+              Science
             </li>
             <li onClick={() => handleScrollTo("who-its-for")}>
-              Who It's For
+              Use Cases
             </li>
             <li onClick={() => handleScrollTo("partners")}>
               Clinical Pilot
             </li>
             <li onClick={() => handleScrollTo("About")}>
-              About
+              Founder
             </li>
-            <li  onClick={() => handleScrollTo("partner")}>
+            <li onClick={() => handleScrollTo("partner")}>
               <button className="cta-btn">
-                Partner With Us
-                </button>
+                Request Partnership
+              </button>
             </li>
           </ul>
 
