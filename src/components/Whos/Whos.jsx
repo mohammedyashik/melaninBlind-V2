@@ -10,82 +10,84 @@ const Whos = () => {
       name: "GP / Family Medicine", 
       icon: <Stethoscope size={18}/>,
       title: "General Practitioners",
-      desc: "The GP is the gatekeeper of skin cancer triage. They see 40–60 patients per day, most with no dermatology training, no objective tool, and no way to confidently distinguish a benign mole from an early malignancy. MelaninBlind gives the GP an objective 60-second answer — and eliminates the reflexive biopsy referral that drives 77% of unnecessary procedures."
+      desc: "General practitioners are the first point of contact for most skin concerns. They manage high patient volumes without specialised dermatology training and rely heavily on visual judgement. melaninBlind provides an objective, 60-second triage decision — reducing unnecessary referrals and limiting the cascade of avoidable biopsies."
     },
     { 
       name: "Hospital Outpatient", 
       icon: <Building2 size={18}/>,
       title: "Hospital Outpatient Departments",
-      desc: "High-volume dermatology outpatient clinics see hundreds of patients per week with months-long wait times. A MelaninBlind patch at triage level — before the patient even reaches the dermatologist — filters the caseload intelligently and reduces the referral backlog dramatically."
+      desc: "Dermatology outpatient departments operate under significant load, with long wait times and high patient volumes. Introducing melaninBlind at triage level enables early filtering of low-risk cases — reducing backlog and allowing specialists to focus on clinically relevant patients."
     },
     { 
       name: "Community Health Workers", 
       icon: <Globe size={18}/>,
       title: "Community Health Workers",
-      desc: "In rural India, Africa, and Southeast Asia, the community health worker is often the only trained medical contact a person will have. MelaninBlind requires no specialist training, no electricity, and no laboratory. A health worker with an NFC smartphone and a patch can provide objective skin cancer triage anywhere on earth."
+      desc: "In many regions, community health workers are the only accessible healthcare providers. melaninBlind requires no specialist training, no external power source, and no laboratory infrastructure — enabling objective skin cancer triage in low-resource and remote environments."
     },
     { 
       name: "NGO / Global Health", 
       icon: <Heart size={18}/>,
       title: "NGO and Global Health Programmes",
-      desc: "WHO, MSF, USAID, and BIRAC-funded programmes operate in exactly the settings where skin cancer goes undetected. At $5 per patch, MelaninBlind is designed to work within the procurement and budget structures of global health institutions. One patch. One phone. One result. Anywhere."
+      desc: "Global health programmes operate in environments where early detection is limited by infrastructure and cost. melaninBlind is designed to integrate within these systems — enabling scalable, low-cost triage using a single patch and a standard smartphone."
     },
     { 
       name: "Dermatology Clinics", 
       icon: <ShieldCheck size={18}/>,
       title: "Dermatology Clinics",
-      desc: "For dermatologists who want to reduce the volume of low-risk referrals reaching their clinic, MelaninBlind provides an objective pre-screening tool that filters patients before they arrive. Only the cases that genuinely need specialist attention reach the specialist — saving time, improving outcomes, and reducing patient anxiety."
+      desc: "For dermatology practices, melaninBlind functions as a pre-screening layer — reducing low-risk referrals and improving clinical efficiency. Only patients with meaningful risk profiles proceed to specialist evaluation, improving workflow and patient outcomes."
     }
   ];
+
   const techCards = [
     {
       value: "96.6%",
-      label: "Clinical Sensitivity — International Trial",
-      desc: "Multicentre clinical trial — 5 US and 17 European sites. 1,943 evaluable lesions. Histopathology-verified on every lesion. The same EIS physics applies equally to every Fitzpatrick type.",
+      label: "Melanoma Sensitivity — Multicentre Trial",
+      desc: "Validated across multiple international clinical sites with histopathology as the reference standard. The same impedance-based principles apply consistently across all skin types.",
       source: "Malvehy et al. — British Journal of Dermatology — 2014 — PMC4257582",
       color: "teal"
     },
     {
       value: "FDA",
-      label: "Cleared Regulatory Pathway — 2012 & 2020",
-      desc: "EIS for skin cancer first cleared by the FDA in 2012. Nevisense 3.0 received an updated 510(k) in 2020 — currently active. MelaninBlind targets the identical pathway through CDSCO Class B in India.",
-      source: "FDA 510(k) K143188 — Nevisense 3.0 — SciBase AB — 2020",
+      label: "Regulatory Pathway Established",
+      desc: "Electrical impedance-based skin cancer detection received FDA clearance in 2012, with subsequent updates. melaninBlind follows an equivalent regulatory pathway, adapted for CDSCO Class B in India.",
+      source: "FDA 510(k) K143188 — Nevisense 3.0 — SciBase AB",
       color: "gold"
     },
     {
       value: "2025",
-      label: "Battery-Free EIS Patch — Peer-Reviewed",
-      desc: "A fully battery-free, NFC-powered EIS skin diagnostic patch was demonstrated and published in a peer-reviewed study in 2025. This directly validates the core hardware architecture of MelaninBlind.",
-      source: "PMC12484435 — 2025 — Peer-reviewed publication",
+      label: "Battery-Free EIS Patch — Validated",
+      desc: "Recent peer-reviewed work demonstrates fully battery-free, NFC-powered impedance diagnostics, validating the underlying hardware architecture used in melaninBlind.",
+      source: "Peer-reviewed publication — 2025",
       color: "blue"
     }
   ];
+
   const outcomes = [
     {
       percentage: "~85%",
       label: "of cases",
       status: "NORMAL",
-      subtitle: "No Biopsy Needed",
-      desc: "The lesion shows a normal tissue impedance signature. Patient is discharged with routine follow-up. Eliminates the $800–$3,000 biopsy procedure that was never clinically justified.",
-      footer: "No further action required",
+      subtitle: "No further intervention",
+      desc: "Impedance profile consistent with normal tissue. The patient is discharged with routine follow-up, avoiding unnecessary biopsy and associated cost.",
+      footer: "Routine follow-up",
       colorClass: "green"
     },
     {
       percentage: "~10%",
       label: "of cases",
       status: "MONITOR",
-      subtitle: "Recheck in 90 Days",
-      desc: "The lesion shows a borderline impedance signal. GP schedules a follow-up in 90 days. No immediate biopsy referral needed. Patient is monitored without cost and anxiety.",
-      footer: "Follow-up appointment in 90 days",
+      subtitle: "Scheduled reassessment",
+      desc: "Borderline impedance signature. The patient is monitored over time with a scheduled follow-up, without immediate invasive procedures.",
+      footer: "Re-evaluate in 90 days",
       colorClass: "yellow"
     },
     {
       percentage: "~5%",
       label: "of cases",
       status: "REFER",
-      subtitle: "Biopsy Justified",
-      desc: "High-confidence malignancy signal. This is the only group that proceeds to biopsy — and they proceed with full clinical confidence. Every referral is justified.",
-      footer: "Refer to dermatologist immediately",
+      subtitle: "Specialist evaluation required",
+      desc: "High-confidence abnormal signal. The patient is referred for biopsy and specialist care with clinical justification.",
+      footer: "Refer to dermatologist",
       colorClass: "red"
     }
   ];
@@ -98,8 +100,10 @@ const Whos = () => {
           {/* LEFT SIDE: Selection Tabs */}
           <div className="who-left">
             <div className="sci-label">— WHO IT'S FOR</div>
-            <h1 className="who-title">Built for the doctor<br/>who sees everyone.</h1>
-            <p className="who-subtitle">MelaninBlind is designed for first-contact clinical settings where no dermatologist is present — the vast majority of the world's healthcare interactions.</p>
+            <h1 className="who-title">Built for first-contact clinical care.</h1>
+            <p className="who-subtitle">
+              Designed for healthcare settings where initial triage decisions are made — often without access to a dermatologist.
+            </p>
             
             <div className="tabs-list">
               {tabs.map((tab, i) => (
@@ -115,8 +119,8 @@ const Whos = () => {
           <div className="who-right">
             <div className="img-placeholder">
                <div className="pattern-overlay"></div>
-               <p>MelaninBlind in Clinical Practice</p>
-               <span>Objective Triage • 60 Seconds • No Bias</span>
+               <p>melaninBlind in clinical workflow</p>
+               <span>Objective triage • 60 seconds • skin-tone independent</span>
             </div>
             
             <div className="who-detail-card">
@@ -125,22 +129,22 @@ const Whos = () => {
             </div>
 
             <div className="quote-card">
-              <p>"Any GP equipped with MelaninBlind can make an objective triage decision in 60 seconds — without a dermatology referral, without a biopsy, and without bias toward any skin tone."</p>
-              <span className="quote-author">— Mohammed Yashik B. Founder, MelaninBlind</span>
+              <p>"melaninBlind enables any primary care provider to make a consistent, objective triage decision — independent of visual interpretation or skin tone."</p>
+              <span className="quote-author">— Mohammed Yashik B, Founder</span>
             </div>
           </div>
         </div>
       </div>
     </section>
+
     <section className="outcome-section">
       <div className="outcome-container">
         {/* Header Section */}
         <div className="outcome-header">
-          <h1 className="outcome-main-title">One patch. Three possible outcomes.<br />One objective answer.</h1>
+          <h1 className="outcome-main-title">One scan. Three outcomes. A clear next step.</h1>
           <p className="outcome-main-desc">
-            MelaninBlind does not diagnose cancer. It triages the decision. The result tells any <br />
-            GP exactly what to do next — without guesswork, without bias, and without a <br />
-            ₹25,000 biopsy that was never needed.
+            melaninBlind does not diagnose cancer. It enables triage — providing a clear,
+            evidence-based next step for the clinician without reliance on subjective judgement.
           </p>
         </div>
 
@@ -150,7 +154,7 @@ const Whos = () => {
           <span>→</span>
           <span>NFC SCAN</span>
           <span>→</span>
-          <span>EIS READS TISSUE</span>
+          <span>EIS ANALYSIS</span>
           <span>→</span>
           <span className="active-status">RESULT IN 60 SECONDS</span>
         </div>
@@ -174,29 +178,28 @@ const Whos = () => {
 
         {/* Bottom Small Text */}
         <div className="outcome-footer-meta">
-          96.6% sensitivity maintained  •  77% unnecessary biopsies eliminated  •  Nevisense clinical protocol – Malvehy et al. BJD 2014
+          ~96% sensitivity maintained • up to 77% unnecessary biopsies avoided • validated EIS clinical protocol
         </div>
       </div>
     </section>
+
     <section className="proven-tech-section">
       <div className="proven-container">
         {/* Top Header */}
         <div className="proven-label">— PROVEN TECHNOLOGY</div>
         <h1 className="proven-title">
-          We did not invent new science.<br />
-          We built a new form factor<br />
-          around proven science.
+          Established science.<br />
+          Re-engineered for accessibility.
         </h1>
         <p className="proven-subtitle">
-          The physics of EIS has been validated in peer-reviewed trials, cleared by the FDA,<br />
-          and published in leading dermatology journals. MelaninBlind engineers that<br />
-          validated science into a $2 battery-free patch.
+          Electrical impedance spectroscopy is clinically validated, peer-reviewed, and
+          regulatory-cleared. melaninBlind translates this into a low-cost, battery-free format.
         </p>
 
         {/* Feature Quote Box */}
         <div className="proven-quote-box">
           <p>
-            "The same electrical impedance physics that achieved 96.6% melanoma sensitivity in 1,943 lesions across 22 clinical sites applies <span className="highlight-text">equally to every skin tone on earth.</span> Melanin is electrically transparent. That is the entire insight."
+            "Electrical impedance enables direct measurement of tissue properties — independent of skin pigmentation. <span className="highlight-text">The signal remains consistent across all skin tones.</span>"
           </p>
         </div>
 
