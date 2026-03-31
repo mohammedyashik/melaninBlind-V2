@@ -1,7 +1,6 @@
 import "./Home.css";
 import { useEffect } from "react";
 import heroImage from "../../assets/melaninbrand.png";
-import { Section } from "lucide-react";
 import Science from "../Science/Science";
 import Works from "../Works/Works";
 import Whos from "../Whos/Whos";
@@ -19,56 +18,59 @@ const Home = () => {
     { title: 'C-CAMP', subtitle: 'Incubation · Bangalore' },
     { title: 'La Trobe University', subtitle: 'Melbourne & Sydney' },
     { title: 'HTIC IIT Madras', subtitle: 'Pre-Incubation 2026', highlight: true },
-    ];
+  ];
+
   const stories = [
     {
       id: '01',
       name: 'Sarah, 34 AU',
       location: 'BRISBANE, AUSTRALIA',
       skinColor: '#F5D0B4',
-      quote: '"They found two suspicious moles at my annual check. My GP sent me for biopsies on both. Both came back benign. $2,400 spent and three weeks of anxiety — for nothing. There has to be a better way to know before you cut."',
-      stat: '77% of biopsies come back benign. She was part of the majority.'
+      quote: '"They found two suspicious moles. Both biopsies came back benign. $2,400 spent — and weeks of anxiety. There has to be a way to know — before you cut."',
+      stat: '77% of biopsies come back benign. Most never needed.'
     },
     {
       id: '02',
       name: 'Priya, 41 IN',
       location: 'COIMBATORE, INDIA',
       skinColor: '#A6734E',
-      quote: '"The AI app said low risk. My dermatologist was 200 kilometres away and a 3-month wait. By the time I was seen, it had progressed to Stage II. The tool was not built for my skin tone. Nobody said that out loud, but the data is clear."',
-      stat: 'AI accuracy on dark skin: 17%. On fair skin: 70%. That gap costs lives.'
+      quote: '"The AI app said low risk. By the time I saw a specialist, it had progressed. The tool wasn’t built for my skin tone."',
+      stat: 'AI accuracy on dark skin: 17%. On fair skin: 70%.'
     },
     {
       id: '03',
       name: 'Emmanuel, 28 NG',
       location: 'LAGOS, NIGERIA',
       skinColor: '#4A2C1D',
-      quote: '"There is no dermatologist in my district. My GP looked at my arm and made his best guess. He is a good doctor and a careful man. But guessing is not medicine — it is hope with a stethoscope. He deserved a better tool."',
-      stat: '1 dermatologist per 1.5 million people outside Indian cities. Zero in many African districts.'
+      quote: '"There is no dermatologist here. My GP made his best guess. Guessing isn’t medicine. It’s hope with a stethoscope."',
+      stat: '1 dermatologist per 1.5M people in many regions.'
     }
-    ];
+  ];
+
   const statsData = [
-      {
-        value: '1.7M+',
-        description: 'New skin cancer cases per year globally — rising annually',
-        source: 'GLOBOCAN 2022 / WHO'
-      },
-      {
-        value: '3B+',
-        description: 'People worldwide with no access to a dermatologist',
-        source: 'Science Advances 2022 - KPMG 2026'
-      },
-      {
-        value: '$9.42B',
-        description: 'Global skin cancer diagnostics market in 2026',
-        source: 'Precedence Research 2026'
-      },
-      {
-        value: '77%',
-        description: 'Skin biopsies that come back benign — most never needed',
-        source: 'UW EMR Study 2028 - JAMA Dermatology'
-      }
-    ];
-    useEffect(() => {
+    {
+      value: '1.7M+',
+      description: 'New cases per year — and rising',
+      source: 'WHO / GLOBOCAN'
+    },
+    {
+      value: '3B+',
+      description: 'People with no access to a dermatologist',
+      source: 'Global health estimates'
+    },
+    {
+      value: '$9.42B',
+      description: 'Global diagnostics market',
+      source: 'Precedence Research'
+    },
+    {
+      value: '77%',
+      description: 'Biopsies that come back benign',
+      source: 'JAMA Dermatology'
+    }
+  ];
+
+  useEffect(() => {
     const cards = document.querySelectorAll(".story-card");
     const observer = new IntersectionObserver(
       (entries) => {
@@ -82,52 +84,50 @@ const Home = () => {
     );
     cards.forEach((card) => observer.observe(card));
   }, []);
+
   return (
     <>
-    <section className="hero">
-      <div className="container hero-grid">
-        <div className="hero-left">
-          <div className="top-badge">
-            ● Early-Stage MedTech · Chennai · 2026
-          </div>
-          <p className="hero-quote">
-            "She had a dark spot on her arm for two years. Every tool said inconclusive..."
-          </p>
+      <section className="hero">
+        <div className="container hero-grid">
+          <div className="hero-left">
 
-          <h1>
-            Cancer doesn’t <br />
-            discriminate. <br />
-            <span>Now neither</span> <br />
-            does diagnosis.
-          </h1>
+            <div className="top-badge">
+              ● MedTech · Built in India · For the world
+            </div>
 
-          <p className="hero-desc">
-            MelaninBlind is a battery-free skin cancer screening patch that measures 
-            <b> electricity, not colour</b> — so it works on every human being equally.
-          </p>
-          <ul className="hero-points">
-            <li>✔ 94–97% sensitivity — clinically validated</li>
-            <li>✔ Battery-free NFC — no extra hardware</li>
-            <li>✔ Works on all Fitzpatrick skin types</li>
-          </ul>
-          <div className="hero-buttons">
-            <button className="btn-primary">See How It Works →</button>
-            <button className="btn-outline">Apply for Clinical Pilot</button>
+            <h1 className="hero-title">
+              melaninBlind.<br />
+              <span>Skin cancer triage — rebuilt for every skin tone.</span>
+            </h1>
+
+            <p className="hero-desc">
+              A 60-second, battery-free screening system that reads <br />
+              <b>electricity — not colour.</b>
+            </p>
+
+            <p className="hero-sub">
+              No imaging. No bias. No specialist.
+            </p>
+
+            <div className="hero-buttons">
+              <button className="btn-primary">See how it works →</button>
+              <button className="btn-outline">Request pilot</button>
+            </div>
+
           </div>
 
-        </div>
-        <div className="hero-right">
-          <div className="image-wrapper">
-            <img src={heroImage} alt="device" />
-            <div className="scan-line"></div>
+          <div className="hero-right">
+            <div className="image-wrapper">
+              <img src={heroImage} alt="device" />
+              <div className="scan-line"></div>
+            </div>
           </div>
         </div>
-
-      </div>
       </section>
+
       <section className="partner-container">
-        <h3 className="section-title">RECOGNISED & SUPPORTED BY</h3>
-        
+        <h3 className="section-title">Backed by</h3>
+
         <div className="partner-grid">
           {partners.map((item, index) => (
             <div key={index} className={`partner-card ${item.highlight ? 'highlight' : ''}`}>
@@ -141,20 +141,28 @@ const Home = () => {
           <span className="dot">•</span>
           <span>6+ incubations</span>
           <span className="dot">•</span>
-          <span>Rs. 20L+ in government grants</span>
+          <span>₹20L+ non-dilutive grants (prior work)</span>
           <span className="dot">•</span>
-          <span>National IICDC 2019 Winner</span>
+          <span>National IICDC Winner</span>
           <span className="dot">•</span>
           <span>Texas Instruments & DST</span>
         </div>
       </section>
+
       <section className="problem-container">
         <header className="header-content">
-          <div className="label">— THE PROBLEM – IN THREE LIVES</div>
-          <h1>Same disease.<br />Completely different outcomes.<br />Because of skin colour.</h1>
+          <div className="label">THE PROBLEM — IN THREE LIVES</div>
+
+          <h1>
+            Same disease.<br />
+            Different outcomes.<br />
+            Because of skin tone.
+          </h1>
+
           <p className="description">
-            These are not edge cases. They are the global standard. MelaninBlind exists to 
-            change this — using physics that has nothing to do with pigment.
+            This is not an edge case.<br />
+            This is the global standard.<br /><br />
+            melaninBlind changes this — using physics, not pigment.
           </p>
         </header>
 
@@ -174,9 +182,10 @@ const Home = () => {
         </div>
 
         <footer className="disclaimer">
-          These stories represent documented global patterns. Names are fictional. All statistics are peer-reviewed and cited.
+          Based on documented global patterns. Names are illustrative.
         </footer>
       </section>
+
       <section className="stats-container">
         <div className="stats-grid">
           {statsData.map((stat, index) => (
@@ -188,23 +197,29 @@ const Home = () => {
           ))}
         </div>
       </section>
+
       <section id="howitworks">
         <Works />
       </section>
-       <section id="science">
-        <Science/>
+
+      <section id="science">
+        <Science />
       </section>
+
       <section id="who-its-for">
-        <Whos/>
+        <Whos />
       </section>
+
       <section id="partners">
-        <Clinicalpilot/>
+        <Clinicalpilot />
       </section>
+
       <section id="About">
-        <About/>
+        <About />
       </section>
+
       <section id="partner">
-        <Partner/>
+        <Partner />
       </section>
     </>
   );
