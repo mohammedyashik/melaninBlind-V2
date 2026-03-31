@@ -8,11 +8,11 @@ const About = () => {
   const credentials = [
   { text: "₹20L+ in non-dilutive grants secured across prior medtech ventures" },
   { text: "National Winner — IICDC (Texas Instruments, DST, IIM Bangalore)" },
-  { text: "Incubated at 6+ leading medtech and research institutions" },
+  { text: "Incubated across 6+ leading medtech and research institutions" },
   { text: "Built multiple non-invasive skin cancer diagnostics to working prototype" },
   { text: "International research exposure — La Trobe University (Melbourne, Sydney)" },
-  { text: "Synthesised 50+ research papers in impedance and skin cancer diagnostics" },
-  { text: "Presented across national startup stages in India" },
+  { text: "Synthesised 50+ research papers in impedance-based skin diagnostics" },
+  { text: "Presented across national startup and research platforms in India" },
   { text: "Prior medtech exit — Co-Founder & COO, Livvolta Healthcare" }
 ];
   
@@ -22,7 +22,7 @@ const About = () => {
         <div className="sci-label">THE FOUNDER</div>
         <h1 className="founder-title">
           Built at the intersection of<br />
-          medicine, physics, and scale.
+          medicine, physics, and real-world deployment.
         </h1>
 
         <div className="founder-content">
@@ -44,12 +44,14 @@ const About = () => {
             <h2 className="name">Mohammed Yashik B</h2>
             <p className="role">
                Founder & CEO • Biomedical Engineer <br />
-               Building skin cancer triage for every skin tone
+               Building a new standard for skin cancer triage
             </p>
             
             <blockquote className="quote">
-              "Most systems fail because they rely on imaging. melaninBlind works because it relies on physics.
-              This is the third iteration — the one that finally gets accuracy, access, and scale right."
+              "Skin cancer detection fails at the first point of care — where most decisions are made.
+              melaninBlind is built to change that.
+
+              This is the third iteration — designed to deliver accuracy, accessibility, and scale in a single system."
             </blockquote>
 
             <div className="credentials-grid">
