@@ -6,23 +6,23 @@ import image from "../../assets/DSC04786.JPG";
 
 const About = () => {
   const credentials = [
-    { text: "Rs. 20L+ ($24,000+) in government grants — BIRAC, DST, IIMB, IIM Calcutta, AIC-CCMB, C-CAMP" },
-    { text: "National Winner — IICDC 2019 (Texas Instruments & DST, IIM Bangalore)" },
-    { text: "6+ incubations at India's leading medtech and innovation institutions" },
-    { text: "Non-invasive skin cancer diagnostic built to prototype — twice, 3 design iterations" },
-    { text: "International — La Trobe University Melbourne & Sydney" },
-    { text: "50+ peer-reviewed EIS and skin cancer diagnostics papers synthesised" },
-    { text: "7 national startup stage presentations across India" },
-    { text: "Co-Founder & COO, Livvolta Healthcare — prior medtech exit" }
-  ];
-
+  { text: "₹20L+ in non-dilutive grants secured across prior medtech ventures" },
+  { text: "National Winner — IICDC (Texas Instruments, DST, IIM Bangalore)" },
+  { text: "Incubated at 6+ leading medtech and research institutions" },
+  { text: "Built multiple non-invasive skin cancer diagnostics to working prototype" },
+  { text: "International research exposure — La Trobe University (Melbourne, Sydney)" },
+  { text: "Synthesised 50+ research papers in impedance and skin cancer diagnostics" },
+  { text: "Presented across national startup stages in India" },
+  { text: "Prior medtech exit — Co-Founder & COO, Livvolta Healthcare" }
+];
+  
   return (
     <section className="founder-section">
       <div className="founder-container">
-        <div className="sci-label">— THE FOUNDER</div>
+        <div className="sci-label">THE FOUNDER</div>
         <h1 className="founder-title">
-          Built by a biomedical engineer<br />
-          who has built this twice before.
+          Built at the intersection of<br />
+          medicine, physics, and scale.
         </h1>
 
         <div className="founder-content">
@@ -30,7 +30,7 @@ const About = () => {
           <div className="founder-sidebar">
             <div className="image-frame">
               <div className="frame-label">Mohammed Yashik Sahib"</div>
-              <div className="frame-sub">Biomedical Enginner. Founder of melaninBlind</div>
+              <div className="frame-sub">Biomedical Engineer • Founder, melaninBlind</div>
               <img 
                 src={image} 
                 alt="Mohammed Yashik B" 
@@ -42,10 +42,14 @@ const About = () => {
           {/* Bio and Stats */}
           <div className="founder-main">
             <h2 className="name">Mohammed Yashik B</h2>
-            <p className="role">Founder & CEO • Biomedical Engineer • Chennai, India</p>
+            <p className="role">
+               Founder & CEO • Biomedical Engineer <br />
+               Building skin cancer triage for every skin tone
+            </p>
             
             <blockquote className="quote">
-              "I have been building non-invasive skin cancer diagnostic tools since 2019. MelaninBlind is the third iteration — the one that gets the physics right, the economics right, and the equity right simultaneously."
+              "Most systems fail because they rely on imaging. melaninBlind works because it relies on physics.
+              This is the third iteration — the one that finally gets accuracy, access, and scale right."
             </blockquote>
 
             <div className="credentials-grid">
@@ -59,7 +63,7 @@ const About = () => {
 
             <div className="contact-footer">
               <div className="contact-col">
-                <a href="mailto:mohammedyashik.b@gmail.com">mohammedyashik.b@gmail.com</a>
+                <a href="mailto:mohammedyashik.b@melaninblind.com">mohammedyashik.b@melaninblind.com</a>
                 <p>+91 9566857390</p>
               </div>
               <div className="contact-col">
@@ -71,7 +75,7 @@ const About = () => {
         </div>
 
         <div className="hiring-bar">
-          Currently seeking: <span>Head of Clinical Affairs</span> • <span>Head of Hardware Engineering</span> • <span>Head of Business Development</span>
+          We're hiring: <span>Head of Clinical Affairs</span> • <span>Head of Hardware Engineering</span> • <span>Head of Business Development</span>
         </div>
       </div>
     </section>
