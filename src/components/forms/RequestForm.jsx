@@ -26,13 +26,13 @@ const RequestForm = () => {
     setMessage("");
     try {
       await sendEmail("template_75rv3mf", {
-        form_type: "Request Form",
+        form_type: "General Enquiry",
         name: formData.name,
         email: formData.email,
         linkedin: formData.linkedin
       });
       setStatus("success");
-      setMessage("Form submitted successfully ✅");
+      setMessage("Submission received. We will get back to you shortly.");
       setFormData({
         name: "",
         email: "",
@@ -45,7 +45,7 @@ const RequestForm = () => {
     } catch (error) {
       console.error("Email send failed:", error);
       setStatus("error");
-      setMessage("Something went wrong ❌");
+      setMessage("Submission failed. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -55,13 +55,13 @@ const RequestForm = () => {
     <div className="wrapper">
       <form className="form" onSubmit={handleSubmit}>
         <div className="form-header">
-          <span className="close">✕</span>
+          <span className="close">Close</span>
         </div>
 
-        <h2>MelaninBlind</h2>
+        <h2>melaninBlind</h2>
 
         <div className="input-group">
-          <label>Name</label>
+          <label>Full Name</label>
           <input
             type="text"
             name="name"
@@ -72,7 +72,7 @@ const RequestForm = () => {
         </div>
 
         <div className="input-group">
-          <label>Email</label>
+          <label>Work Email</label>
           <input
             type="email"
             name="email"
@@ -83,7 +83,7 @@ const RequestForm = () => {
         </div>
 
         <div className="input-group">
-          <label>LinkedIn URL</label>
+          <label>LinkedIn or Professional Profile</label>
           <input
             type="url"
             name="linkedin"
@@ -95,7 +95,7 @@ const RequestForm = () => {
         </div>
 
         <button type="submit" className="button" disabled={loading}>
-          {loading ? "Sending..." : "Submit"}
+          {loading ? "Submitting..." : "Submit"}
         </button>
 
         {message && (
