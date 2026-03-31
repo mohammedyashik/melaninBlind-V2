@@ -1,5 +1,6 @@
 import { Camera, Smartphone, Activity, Clock } from 'lucide-react';
 import "./Science.css";
+
 const Science = () => {
  const data = [
     { type: 'I', label: 'Very Fair', accuracy: '70%', color: '#F9E4D4', barClass: 'works-well' },
@@ -9,6 +10,7 @@ const Science = () => {
     { type: 'V', label: 'Brown', accuracy: '20%', color: '#5C3D2E', barClass: 'fails' },
     { type: 'VI', label: 'Deep', accuracy: '17%', color: '#2C1B12', barClass: 'fails' },
   ];
+
   return (
     <>
       <section id="science" className="science-section">
@@ -18,36 +20,42 @@ const Science = () => {
         <div className="science-left">
           <div className="sci-label">— THE SCIENCE</div>
           <h1 className="sci-title">
-            Advanced EIS Physics in a Patch You Can Hold in One Hand.
+            Clinically validated impedance physics — delivered in a handheld patch.
           </h1>
+
           <div className="sci-description">
             <p>
-              Electrical Impedance Spectroscopy has been studied for over 40 years. 
-              The Nevisense device — the commercial predecessor to MelaninBlind — 
-              achieved <b  style={{color:"black"}}>96.6% melanoma sensitivity</b> in an international multicentre 
-              clinical trial and received FDA clearance in 2012.
+              Electrical Impedance Spectroscopy has been studied for over four decades.
+              The Nevisense system — a commercial predecessor — demonstrated 
+              <b style={{color:"black"}}> 96.6% melanoma sensitivity</b> in an international multicentre clinical trial 
+              and received FDA clearance in 2012.
             </p>
+
             <p>
-              The physics is simple. Cancer cells have disrupted membranes and leaky 
-              junctions. They conduct electricity differently from healthy tissue. A 
-              frequency sweep across the lesion produces an impedance signature — a 
-              fingerprint of the cellular biology underneath.
+              The principle is well established. Cancer cells exhibit disrupted membranes 
+              and altered junctions, leading to measurable differences in electrical behaviour. 
+              A multi-frequency sweep across a lesion generates an impedance profile — a direct 
+              readout of underlying cellular structure.
             </p>
+
             <p>
-              Melanin — the pigment that gives skin its colour — sits on the surface. 
-              Light cannot get past it, which is why every optical and AI tool fails on 
-              dark skin. <b style={{color:"black"}}>Electricity is not affected by melanin at all.</b> It reads 
-              straight through to the cells.
+              Melanin — the pigment responsible for skin colour — is optically dominant but 
+              electrically transparent. Optical systems cannot penetrate it, which is why 
+              imaging-based AI fails on darker skin.
+              <b style={{color:"black"}}> Electrical signals are unaffected by melanin.</b> They measure the tissue directly.
             </p>
-            <p className="sci-insight">That is the insight. That is MelaninBlind.</p>
+
+            <p className="sci-insight">
+              This is not a new theory. It is established physics — now made accessible.
+            </p>
           </div>
 
           {/* Signal Visualization Placeholder */}
           <div className="sci-graph-box">
              <div className="graph-header">
-                EIS SIGNAL — 1KHZ TO 2.5MHZ — NORMAL VS CANCEROUS TISSUE — MELANIN-TRANSPARENT
+                EIS SIGNAL — 1KHZ TO 2.5MHZ — NORMAL VS MALIGNANT TISSUE — MELANIN-INDEPENDENT
              </div>
-             {/* You can replace this with an actual SVG or Image of a wave */}
+
              <div className="wave-box">
                 <svg viewBox="0 0 800 120" className="wave-svg">
                   
@@ -67,8 +75,8 @@ const Science = () => {
           </div>
 
           <div className="sci-footer-tag">
-            15 development, validation and clinical utility studies referenced 
-            <span>• FDA-cleared technology pathway identified • CDSCO Class B regulatory route - India</span>
+            15+ validation and clinical studies referenced 
+            <span>• FDA-cleared pathway established • CDSCO Class B regulatory pathway — India</span>
           </div>
         </div>
 
@@ -76,46 +84,55 @@ const Science = () => {
         <div className="science-right">
           <div className="sci-card">
             <h2 className="sci-value">96.6%</h2>
-            <p className="sci-meta">Melanoma Sensitivity — International Multicentre Trial</p>
+            <p className="sci-meta">Melanoma sensitivity — international multicentre trial</p>
             <span className="sci-source">Malvehy et al. — British Journal of Dermatology — 2014 — PMC4257582</span>
           </div>
 
           <div className="sci-card">
             <h2 className="sci-value gold">1,943</h2>
-            <p className="sci-meta">Lesions Evaluated — Histopathology-Verified Gold Standard</p>
+            <p className="sci-meta">Lesions evaluated — histopathology-verified</p>
             <span className="sci-source">Malvehy et al. — BJD 2014 — 5 US + 17 European sites</span>
           </div>
 
           <div className="sci-card">
             <h2 className="sci-value blue">FDA 2012</h2>
-            <p className="sci-meta">EIS for Skin Cancer First Cleared — Updated 510(k) 2020</p>
-            <span className="sci-source">FDA 510(k) K143188 — Nevisense 3.0 — SciBase AB — 2020</span>
+            <p className="sci-meta">First clearance of EIS for skin cancer detection</p>
+            <span className="sci-source">FDA 510(k) K143188 — Nevisense 3.0 — SciBase AB</span>
           </div>
 
           <div className="sci-card">
             <h2 className="sci-value green">2025</h2>
-            <p className="sci-meta">Battery-Free NFC EIS Patch — Peer-Reviewed Validation</p>
-            <span className="sci-source">PMC11484435 — 2025 — Directly validates MelaninBlind architecture</span>
+            <p className="sci-meta">Battery-free NFC EIS patch — peer-reviewed validation</p>
+            <span className="sci-source">PMC11484435 — Validates melaninBlind architecture</span>
           </div>
 
           <div className="sci-card alert">
             <h2 className="sci-value red">17%</h2>
-            <p className="sci-meta">AI Accuracy on Dark Skin vs 70% on Fair Skin — The Gap MelaninBlind Closes</p>
-            <span className="sci-source">Kamulegeya et al. — BMC Med Educ — 2023 — PMC10752283</span>
+            <p className="sci-meta">AI accuracy on dark skin vs ~70% on fair skin</p>
+            <span className="sci-source">Kamulegeya et al. — BMC Med Educ — 2023</span>
           </div>
         </div>
       </div>
     </section>
+
     <section className="bias-section">
       <div className="bias-container">
-        <div className="sci-label">— THE BIAS BUILT INTO EVERY EXISTING TOOL</div>
-        <h1 className="bias-title">Every diagnostic tool currently available was built for fair skin.</h1>
+        <div className="sci-label">— SYSTEMIC BIAS IN CURRENT DIAGNOSTICS</div>
+
+        <h1 className="bias-title">
+          Most diagnostic tools were never built for all skin tones.
+        </h1>
+
         <p className="bias-subtitle">
-          Not by deliberate exclusion — but by the physics of optical measurement and the demographics of clinical training datasets. The result is a 53-percentage-point accuracy gap. MelaninBlind closes it entirely.
+          This is not intentional — it is a consequence of optical physics and training data bias.
+          The result is a significant accuracy gap across skin types.
+          melaninBlind removes this limitation at the measurement level.
         </p>
 
         <div className="chart-box">
-          <div className="chart-header">FITZPATRICK SCALE — AI OPTICAL ACCURACY VS EIS (MELANINBLIND)</div>
+          <div className="chart-header">
+            FITZPATRICK SCALE — AI OPTICAL ACCURACY VS EIS (MELANINBLIND)
+          </div>
           
           <div className="fitzpatrick-grid">
             {data.map((item, idx) => (
@@ -135,14 +152,14 @@ const Science = () => {
           </div>
 
           <div className="chart-footer">
-            <p>EIS (MelaninBlind) ✓ Delivers equal accuracy across all 6 Fitzpatrick types</p>
-            <span>Kamulegeya et al. — BMC Medical Education — 2023 — PMC10782289</span>
+            <p>EIS (melaninBlind) ✓ Consistent accuracy across all Fitzpatrick skin types</p>
+            <span>Kamulegeya et al. — BMC Medical Education — 2023</span>
             
             <div className="legend">
-               <div><span className="dot well"></span> AI works well (≥65%)</div>
-               <div><span className="dot partial"></span> AI partial accuracy</div>
-               <div><span className="dot fails"></span> AI fails (17% vs 70%)</div>
-               <div><span className="dot eis"></span> EIS always works</div>
+               <div><span className="dot well"></span> AI performs well (≥65%)</div>
+               <div><span className="dot partial"></span> AI shows variable accuracy</div>
+               <div><span className="dot fails"></span> AI performance drops significantly</div>
+               <div><span className="dot eis"></span> EIS remains consistent</div>
             </div>
           </div>
         </div>
