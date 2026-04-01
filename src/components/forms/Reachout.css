@@ -1,193 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
 :root {
-  --neon-accent: #0f0; /* Electric Neon Green */
-  --bg-dark: #000a08;
-  --bg-panel: #031411;
-  --text-primary: #e0f2f1;
-  --text-muted: #546e7a;
+  --primary: #6358ff;
+  --primary-hover: #4f46e5;
+  --text-dark: #111827;
+  --text-light: #6b7280;
+  --bg-visual: #0b0e14;
+  --border: #e5e7eb;
+  --radius: 24px;
 }
 
-.reach-viewport {
+/* 🌍 GLOBAL */
+* {
   margin: 0;
-  font-family: 'Courier New', Courier, monospace; /* Monospace for tech feel */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🌍 VIEWPORT */
+.reach-viewport {
   min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background: var(--bg-dark);
+  justify-content: center;
+  background: #f3f4f6;
+  padding: 20px;
   position: relative;
-  overflow: hidden;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow: hidden; /* Prevents scrollbars during animation */
 }
 
-/* 🌀 Background Tech Grid */
+/* BACKGROUND */
 .tech-bg {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background-image: 
-    linear-gradient(rgba(15, 255, 0, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 255, 0, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: bgPulse 6s infinite alternate ease-in-out;
+  inset: 0;
+  background: radial-gradient(circle at 10% 20%, rgba(99,88,255,0.05), transparent 50%),
+              radial-gradient(circle at 90% 80%, rgba(0,180,255,0.05), transparent 50%);
+  z-index: 1;
+  animation: bgFade 2s ease-out;
 }
 
-/* 🛡 Panel Wrapper */
+/* 🔲 MAIN CARD */
 .reach-wrapper {
-  width: 90%;
-  max-width: 420px;
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  min-height: 650px;
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+  overflow: hidden;
   position: relative;
-  z-index: 5;
-  animation: glitchEntrance 0.7s ease-out;
+  z-index: 2;
+  /* Entrance Animation */
+  animation: cardEntrance 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
+/* ================= LEFT SIDE ================= */
 .reach-panel {
-  background: var(--bg-panel);
-  padding: 50px;
-  border-radius: 0; /* Minimalist sharp edges */
-  border: 1px solid rgba(15, 255, 0, 0.1);
-  box-shadow: 0 0 40px rgba(0,0,0,0.8), 0 0 10px rgba(15, 255, 0, 0.05);
+  flex: 1.1;
+  padding: 50px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
 }
 
 .back-link {
-  font-size: 11px;
-  color: var(--neon-accent);
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
   cursor: pointer;
-  margin-bottom: 30px;
-  text-transform: uppercase;
+  animation: fadeIn 0.5s ease 0.8s both;
 }
 
-.back-link:hover {
-  text-shadow: 0 0 5px var(--neon-accent);
+.header-zone {
+  margin-bottom: 35px;
+  animation: textReveal 0.6s ease 0.4s both;
 }
 
 .header-zone h2 {
-  font-size: 32px;
-  color: var(--text-primary);
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: -1px;
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--text-dark);
 }
 
-.header-zone p.subtitle {
-  font-size: 12px;
-  color: var(--text-muted);
-  margin: 10px 0 35px;
-  font-weight: bold;
+.subtitle {
+  font-size: 13px;
+  color: var(--text-light);
 }
 
-/* 🖋 "Matrix" Data Fields */
+/* STAGGERED INPUT FIELDS */
 .data-field {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   position: relative;
+  animation: textReveal 0.6s ease both;
 }
+
+/* We delay each field so they pop in one by one */
+.data-field:nth-child(3) { animation-delay: 0.5s; }
+.data-field:nth-child(4) { animation-delay: 0.6s; }
+.data-field:nth-child(5) { animation-delay: 0.7s; }
 
 .data-field input {
   width: 100%;
-  padding: 12px 10px;
-  border: 1px solid rgba(15, 255, 0, 0.1);
-  background: rgba(0,0,0,0.3);
-  color: var(--neon-accent);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #f9fafb;
   font-size: 14px;
-  transition: all 0.3s ease;
+  transition: 0.3s;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .data-field input:focus {
-  outline: none;
-  background: rgba(15, 255, 0, 0.03);
-  border-color: rgba(15, 255, 0, 0.3);
+  border-color: var(--primary);
+  background: #fff;
 }
 
-/* 💫 Dynamic Line Effect */
 .focus-line {
   position: absolute;
-  bottom: 0; left: 0;
-  width: 0%;
+  bottom: 0;
+  left: 50%;
+  width: 0;
   height: 2px;
-  background: var(--neon-accent);
-  transition: width 0.4s ease;
+  background: var(--primary);
+  transition: 0.3s;
 }
 
-.data-field input:focus + .focus-line {
+.data-field input:focus ~ .focus-line {
   width: 100%;
+  left: 0;
 }
 
-/* 🚀 Neon Button */
 .neon-btn {
   width: 100%;
-  padding: 16px;
-  background: transparent;
-  color: var(--neon-accent);
-  border: 1px solid var(--neon-accent);
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background: var(--primary);
+  color: white;
   font-weight: 700;
-  text-transform: uppercase;
-  font-size: 14px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 15px;
+  transition: 0.3s;
+  margin-top: 20px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  animation: textReveal 0.6s ease 0.8s both;
 }
 
 .neon-btn:hover {
-  background: rgba(15, 255, 0, 0.05);
-  box-shadow: 0 0 20px rgba(15, 255, 0, 0.3);
-  text-shadow: 0 0 5px var(--neon-accent);
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(99, 88, 255, 0.2);
 }
 
-.neon-btn:disabled {
-  border-color: #555;
-  color: #555;
-  background: transparent;
-}
-
-/* 📢 Console Messages */
-.console-msg {
-  margin-top: 25px;
+/* ================= RIGHT SIDE ================= */
+.reach-wrapper::after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  font-size: 13px;
-  padding: 10px;
-  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+  padding: 40px;
+  content: "Welcome Back To MelaninBlind ";
+  cursor: pointer;
+  flex: 0.9;
+  background-color: var(--bg-visual);
+  background-image:
+    radial-gradient(circle at 80% 20%, rgba(99,88,255,0.3), transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(0,180,255,0.2), transparent 40%);
+  
+  /* Entrance for Right Panel */
+  animation: panelSlide 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
-.console-msg.success { color: #81c784; background: rgba(129, 199, 132, 0.05); border: 1px solid rgba(129, 199, 132, 0.2); }
-.console-msg.error { color: #e57373; background: rgba(229, 115, 115, 0.05); border: 1px solid rgba(229, 115, 115, 0.2); }
+/* ================= 🎞️ ANIMATION KEYFRAMES ================= */
 
-/* 🎬 Animations */
-
-@keyframes bgPulse {
-  0% { transform: scale(1); opacity: 0.8; }
-  100% { transform: scale(1.05); opacity: 1; }
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
-@keyframes glitchEntrance {
-  0% { opacity: 0; transform: scale(1.1); filter: contrast(1.5); }
-  80% { opacity: 1; transform: scale(0.99); filter: contrast(1); }
-  100% { transform: scale(1); }
+@keyframes panelSlide {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
-/* 🌀 Dot Pulse Loader */
-.dot-pulse {
-  position: relative;
-  width: 8px;
-  height: 8px;
-  border-radius: 5px;
-  background-color: var(--neon-accent);
-  color: var(--neon-accent);
-  animation: dotPulse 1s infinite linear;
-  margin: 0 auto;
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.dot-pulse::before, .dot-pulse::after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 0; width: 8px; height: 8px; border-radius: 5px; background-color: var(--neon-accent); color: var(--neon-accent);
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.dot-pulse::before { left: -12px; animation: dotPulseBefore 1s infinite linear; }
-.dot-pulse::after { left: 12px; animation: dotPulseAfter 1s infinite linear; }
+@keyframes bgFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-@keyframes dotPulseBefore { 0% { opacity: 1; } 50%, 100% { opacity: 0.1; } }
-@keyframes dotPulse { 0%, 50% { opacity: 1; } 100% { opacity: 0.1; } }
-@keyframes dotPulseAfter { 0%, 50%, 100% { opacity: 1; } 0%, 50% { opacity: 0.1; } }
+/* ================= 📱 RESPONSIVE (Remains the same) ================= */
+@media (max-width: 1024px) {
+  .reach-wrapper { flex-direction: column; max-width: 500px; }
+  .reach-wrapper::after { display: none; }
+  .reach-panel { padding: 40px 30px; }
+  .back-link { position: static; margin-bottom: 15px; }
+}
+/* ... rest of your responsive code ... */
 
+/* ================= 📱 RESPONSIVE ================= */
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .reach-wrapper {
+    flex-direction: column;
+    max-width: 500px;
+  }
+
+  .reach-wrapper::after {
+    display: none;
+  }
+
+  .reach-panel {
+    padding: 40px 30px;
+  }
+
+  .back-link {
+    position: static;
+    margin-bottom: 15px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .reach-panel {
+    padding: 35px 25px;
+  }
+
+  .header-zone h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .subtitle {
+    text-align: center;
+  }
+
+  .neon-btn {
+    width: 100%;
+  }
+}
+
+/* SMALL MOBILE */
 @media (max-width: 480px) {
-  .reach-panel { padding: 30px; }
+  .reach-viewport {
+    padding: 10px;
+  }
+
+  .reach-panel {
+    padding: 30px 20px;
+  }
+
+  .header-zone h2 {
+    font-size: 22px;
+  }
+
+  .data-field input {
+    padding: 14px;
+    font-size: 13px;
+  }
+
+  .console-msg {
+    font-size: 13px;
+  }
 }
