@@ -27,14 +27,14 @@ const Reachout = () => {
 
     try {
       await sendEmail("template_75rv3mf", {
-        form_type: "Collaboration Enquiry",
+        form_type: "Reach Out",
         name: formData.name,
         email: formData.email,
         linkedin: formData.linkedin
       });
 
       setStatus("success");
-      setMessage("Request received. We will get back to you shortly.");
+      setMessage("Request sent successfully!");
 
       setFormData({
         name: "",
@@ -49,7 +49,7 @@ const Reachout = () => {
     } catch (error) {
       console.error("Email send failed:", error);
       setStatus("error");
-      setMessage("Submission failed. Please try again.");
+      setMessage("Failed to send request.");
     } finally {
       setLoading(false);
     }
@@ -69,10 +69,7 @@ const Reachout = () => {
           </div>
 
           <div className="header-zone">
-            <h2>Collaboration Enquiry</h2>
-            <p className="subtitle">
-              Partnerships • Research • Clinical • Strategic
-            </p>
+            <h2>Reach Out To MelaninBlind</h2>
           </div>
 
           <div className="data-field">
@@ -80,7 +77,7 @@ const Reachout = () => {
               type="text"
               name="name"
               required
-              placeholder="Full Name"
+              placeholder="full Name"
               value={formData.name}
               onChange={handleChange}
             />
@@ -92,7 +89,7 @@ const Reachout = () => {
               type="email"
               name="email"
               required
-              placeholder="Work Email"
+              placeholder="Professional Email"
               value={formData.email}
               onChange={handleChange}
             />
@@ -104,7 +101,7 @@ const Reachout = () => {
               type="url"
               name="linkedin"
               required
-              placeholder="LinkedIn or Professional Profile"
+              placeholder="LinkedIn Profile URL"
               value={formData.linkedin}
               onChange={handleChange}
             />
@@ -119,7 +116,7 @@ const Reachout = () => {
             {loading ? (
               <div className="dot-pulse"></div>
             ) : (
-              "Submit Enquiry"
+              "Submit"
             )}
           </button>
 
