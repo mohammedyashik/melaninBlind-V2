@@ -63,7 +63,7 @@ const ApplyNow = () => {
           <div className="form-content">
             <h1>Partner with Us</h1>
             <p className="subtitle">
-              Clinical Pilot & Pre-Incubation Application
+              Clinical Pilot Application
             </p>
 
             <form onSubmit={handleSubmit}>
