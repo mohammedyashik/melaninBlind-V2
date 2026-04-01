@@ -9,9 +9,8 @@ const ApplyNow = () => {
     linkedin: "",
   });
 
-  const [message, setMessage] = useState("");
-  const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState({ type: "", text: "" });
 
   const handleChange = (e) => {
     setFormData({
@@ -23,92 +22,121 @@ const ApplyNow = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setMessage("");
+    setMessage({ type: "", text: "" });
 
     try {
       await sendEmail("template_75rv3mf", {
-        form_type: "Clinical Pilot Application",
+        form_type: "Apply Now",
         name: formData.name,
         email: formData.email,
         linkedin: formData.linkedin,
       });
 
-      setStatus("success");
-      setMessage("Application received. Our team will review and respond shortly.");
-
-      // clear form
+      setMessage({ type: "success", text: "Application submitted successfully!" });
       setFormData({
         name: "",
         email: "",
         linkedin: "",
       });
     } catch (error) {
-      console.error("Email send failed:", error);
-      setStatus("error");
-      setMessage("Submission failed. Please try again.");
+      console.error(error);
+      setMessage({ type: "error", text: "Failed to send application." });
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="apply-viewport">
-      <div className="bg-overlay"></div>
+    <div className="page-wrapper">
+      <div className="split-container">
+        <div className="form-section">
+          <header className="form-header">
+            <div className="step-indicator">
+              <span className="step-label">MelaninBlind</span>
+            </div>
 
-      <div className="apply-container">
-        <form className="apply-form" onSubmit={handleSubmit}>
-          <div className="accent-bar"></div>
-
-          <div className="apply-header">
             <span className="back-btn" onClick={() => window.history.back()}>
               ← Back
             </span>
+          </header>
+
+          <div className="form-content">
+            <h1>Partner with Us</h1>
+            <p className="subtitle">
+              Clinical Pilot & Pre-Incubation Application
+            </p>
+
+            <form onSubmit={handleSubmit}>
+
+              <div className="input-group">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Full Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div className="input-group">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Professional Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div className="input-group">
+                <input
+                  type="url"
+                  name="linkedin"
+                  placeholder="LinkedIn Profile URL"
+                  value={formData.linkedin}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div className="form-footer">
+                <button type="submit" className="create-btn" disabled={loading}>
+                  {loading ? "Submitting..." : "Submit"}
+                </button>
+              </div>
+
+            </form>
+
+            {message.text && (
+              <div className={`status-msg ${message.type}`}>
+                {message.text}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* RIGHT SIDE */}
+        <div className="visual-section">
+          <div className="logo-badge">
+            <div className="icon-check"></div>
           </div>
 
-          <div className="title-section">
-            <h2>Clinical Pilot Application</h2>
-            <p>For clinics, hospitals, and healthcare programmes</p>
+          <div className="testimonial">
+            <blockquote>
+              "I have been building non-invasive skin cancer diagnostic tools since 2019. MelaninBlind is the third iteration — the one that gets the physics right, the economics right, and the equity right simultaneously.."
+            </blockquote>
+            <cite>— Mohammed Yashik.B</cite>
+
+            <div className="slider-dots">
+              <span className="dot active"></span>
+              <span className="dot"></span>
+              <span className="dot"></span>
+            </div>
           </div>
+        </div>
 
-          <div className="field-wrapper">
-            <input
-              type="text"
-              name="name"
-              required
-              placeholder="Full Name"
-              value={formData.name}
-              onChange={handleChange}
-            />
-          </div>
-
-          <div className="field-wrapper">
-            <input
-              type="email"
-              name="email"
-              required
-              placeholder="Work Email"
-              value={formData.email}
-              onChange={handleChange}
-            />
-          </div>
-
-          <div className="field-wrapper">
-            <input
-              type="url"
-              name="linkedin"
-              required
-              placeholder="LinkedIn or Professional Profile"
-              value={formData.linkedin}
-              onChange={handleChange}
-            />
-          </div>
-
-          <button type="submit" className="submit-btn" disabled={loading}>
-            {loading ? <span className="loader"></span> : "Submit Application"}
-          </button>
-
-          {message && <div className={`status-msg ${status}`}>{message}</div>}
-        </form>
       </div>
     </div>
   );
