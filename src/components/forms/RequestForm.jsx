@@ -26,13 +26,13 @@ const RequestForm = () => {
     setMessage("");
     try {
       await sendEmail("template_75rv3mf", {
-        form_type: "General Enquiry",
+        form_type: "Request Form",
         name: formData.name,
         email: formData.email,
         linkedin: formData.linkedin
       });
       setStatus("success");
-      setMessage("Submission received. We will get back to you shortly.");
+      setMessage("Form submitted successfully ✅");
       setFormData({
         name: "",
         email: "",
@@ -45,7 +45,7 @@ const RequestForm = () => {
     } catch (error) {
       console.error("Email send failed:", error);
       setStatus("error");
-      setMessage("Submission failed. Please try again.");
+      setMessage("Something went wrong ❌");
     } finally {
       setLoading(false);
     }
@@ -55,47 +55,50 @@ const RequestForm = () => {
     <div className="wrapper">
       <form className="form" onSubmit={handleSubmit}>
         <div className="form-header">
-          <span className="close">Close</span>
+          <span className="close" onClick={() => window.history.back()}>
+            ← Back
+          </span>
         </div>
 
-        <h2>melaninBlind</h2>
+        <div className="head">
+          <h2>Pre-RequestForm</h2>
+        </div>
 
-        <div className="input-group">
-          <label>Full Name</label>
+        <div className="input-group1">
           <input
             type="text"
             name="name"
             required
+            placeholder="Full Name"
             value={formData.name}
             onChange={handleChange}
           />
         </div>
 
-        <div className="input-group">
-          <label>Work Email</label>
+        <div className="input-group1">
           <input
             type="email"
             name="email"
             required
             value={formData.email}
+            placeholder="Professional Email"
             onChange={handleChange}
           />
         </div>
 
-        <div className="input-group">
-          <label>LinkedIn or Professional Profile</label>
+        <div className="input-group1">
           <input
             type="url"
             name="linkedin"
             required
-            placeholder="https://linkedin.com/in/..."
+            placeholder="LinkedIn Profile URL"
             value={formData.linkedin}
             onChange={handleChange}
           />
         </div>
 
         <button type="submit" className="button" disabled={loading}>
-          {loading ? "Submitting..." : "Submit"}
+          {loading ? "Sending..." : "Submit"}
         </button>
 
         {message && (
