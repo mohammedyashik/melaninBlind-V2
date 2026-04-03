@@ -9,7 +9,8 @@
   --radius: 24px;
 }
 
-/* 🌍 VIEWPORT */
+/* ================= 🌍 BASE ================= */
+
 .wrapper {
   min-height: 100vh;
   background: #f0f4f9;
@@ -18,216 +19,97 @@
   justify-content: center;
   padding: 20px;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  overflow: hidden;
 }
 
-/* 📦 THE MAIN FORM CARD */
+/* ================= 📦 CARD ================= */
+
 .form {
   width: 100%;
   max-width: 1000px;
   min-height: 600px;
   background: white;
-  border-radius: var(--radius);
+  border-radius: 24px;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-shadow: 0 40px 100px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  animation: cardEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* ⬅️ CONSTRAIN FORM CONTENT TO LEFT HALF */
-.form-header, .head, .input-group1, .button, .message-text {
+/* LEFT CONTENT */
+.form-header,
+.head,
+.input-group1,
+.button,
+.message-text {
   width: 50%;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding: 0 60px;
   position: relative;
   z-index: 2;
 }
 
-.form-header { margin-bottom: 20px; }
-
-.close {
-  cursor: pointer;
-  color: var(--primary-blue);
-  font-weight: 700;
-  font-size: 14px;
-  transition: 0.3s;
-}
-
+/* TITLE */
 .head h2 {
   font-size: 32px;
   font-weight: 800;
-  color: var(--text-main);
   margin-bottom: 40px;
-  animation: slideRight 0.6s ease 0.3s both;
+  color: black;
 }
 
-/* ✍️ INPUT GROUPS */
+/* INPUT */
 .input-group1 {
-  margin-bottom: 25px;
-  animation: slideRight 0.6s ease both;
+  margin-bottom: 34px;
 }
-
-.input-group1:nth-of-type(1) { animation-delay: 0.4s; }
-.input-group1:nth-of-type(2) { animation-delay: 0.5s; }
-.input-group1:nth-of-type(3) { animation-delay: 0.6s; }
 
 .input-group1 input {
   width: 100%;
-  padding: 15px 0;
+  padding: 14px 0;
   border: none;
-  border-bottom: 2px solid var(--border-color);
+  border-bottom: 2px solid #edf2f7;
   font-size: 16px;
-  font-weight: 600;
-  color: var(--text-main);
   outline: none;
-  transition: 0.3s;
-  background: transparent;
 }
-
-.input-group1 input:focus { border-bottom-color: var(--primary-blue); }
 
 /* BUTTON */
 .button {
   width: 40%;
-  margin-top: 20px;
-  background: linear-gradient(135deg, var(--primary-blue), #00d2ff);
-  color: white;
-  margin-left: 60px; 
-  border: none;
-  padding: 18px;
+  margin-left: 52px;
+  display: block;
+  padding: 16px;
   border-radius: 50px;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 1px;
+  border: none;
+  background: linear-gradient(135deg, #00b4ff, #00d2ff);
+  color: white;
+  font-weight: 700;
   cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 10px 20px rgba(0, 180, 255, 0.2);
-  animation: slideRight 0.6s ease 0.7s both;
-  text-transform: uppercase;
 }
 
-.button:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 15px 30px rgba(0, 180, 255, 0.4);
-}
-
-/* 🖼️ RIGHT SIDE (FULL IMAGE) */
+/* IMAGE SIDE */
 .form::after {
   content: "";
   position: absolute;
-  top: 0;
   right: 0;
+  top: 0;
   width: 50%;
   height: 100%;
-  /* Image Layer */
   background: url("../../assets/requestimg.png") center/cover no-repeat;
-  z-index: 1;
-  animation: panelSlideIn 1s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* 🎞️ KEYFRAMES */
-@keyframes cardEntrance {
-  from { opacity: 0; transform: scale(0.95) translateY(40px); }
-  to { opacity: 1; transform: scale(1) translateY(0); }
-}
-@keyframes panelSlideIn {
-  from { transform: translateX(100%); }
-  to { transform: translateX(0); }
-}
-@keyframes slideRight {
-  from { opacity: 0; transform: translateX(-30px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-/* 📱 RESPONSIVE */
-@media (max-width: 1000px) {
-  .form::after { display: none; }
-  .form-header, .head, .input-group1, .button, .message-text {
-    width: 100%;
-    padding: 0 30px;
-    margin-left: 0;
-  }
-  .form { max-width: 500px; padding: 50px 0; }
-  .button { width: calc(100% - 60px); margin-left: 30px; }
-}
-
-@media (max-width: 480px) {
-  .head h2 { font-size: 24px; }
-}
-/* ================= 💻 LARGE SCREENS (1400px+) ================= */
-@media (min-width: 1400px) {
-  .form {
-    max-width: 1200px;
-  }
-
-  .head h2 {
-    font-size: 36px;
-  }
-
-  .button {
-    font-size: 16px;
-    padding: 20px;
-  }
-}
-
-
-/* ================= 💻 LAPTOP (1200px ↓) ================= */
-@media (max-width: 1200px) {
-  .form {
-    max-width: 900px;
-  }
-
-  .form-header,
-  .head,
-  .input-group1,
-  .button,
-  .message-text {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
-  .button {
-    width: 50%;
-  }
-}
-
-
-/* ================= 💻 SMALL LAPTOP / TABLET LANDSCAPE ================= */
-@media (max-width: 1024px) {
-  .form {
-    max-width: 700px;
-  }
-
-  .form::after {
-    width: 45%;
-  }
-
-  .head h2 {
-    font-size: 28px;
-  }
-
-  .button {
-    width: 60%;
-  }
-}
-
-
-/* ================= 📱 TABLET ================= */
+/* ================= 💻 TABLET ================= */
 @media (max-width: 900px) {
-  /* Remove right image */
+
+  .form {
+    max-width: 500px;
+    padding: 40px 0;
+  }
+
+  /* REMOVE IMAGE */
   .form::after {
     display: none;
   }
 
-  /* Full width form */
-  .form {
-    max-width: 520px;
-    padding: 50px 0;
-  }
-
+  /* FULL WIDTH */
   .form-header,
   .head,
   .input-group1,
@@ -235,60 +117,54 @@
   .message-text {
     width: 100%;
     padding: 0 30px;
-  }
-
-  .button {
-    width: calc(100% - 60px);
-    margin-left: 30px;
   }
 
   .head h2 {
     text-align: center;
   }
 
-  .close {
-    margin-left: 30px;
-  }
-}
-
-
-/* ================= 📱 MOBILE LARGE ================= */
-@media (max-width: 768px) {
-  .wrapper {
-    padding: 15px;
-  }
-
-  .form {
-    border-radius: 18px;
-  }
-
-  .head h2 {
-    font-size: 24px;
-  }
-
-  .input-group1 input {
-    font-size: 14px;
-    padding: 14px 0;
-  }
-
   .button {
-    font-size: 13px;
-    padding: 16px;
+    width: 100%;
   }
 }
-
 
 /* ================= 📱 MOBILE ================= */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+
   .wrapper {
     padding: 10px;
   }
 
+  /* 🔥 REMOVE POPUP LOOK */
   .form {
     max-width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+    min-height: auto;
+    border-radius: 0;      /* full screen feel */
+    box-shadow: none;      /* remove popup shadow */
+    padding: 30px 0;
   }
+
+  .head h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .input-group1 input {
+    font-size: 14px;
+  }
+
+  .button {
+    width: 100%;
+    padding: 14px;
+  }
+
+  .close {
+    font-size: 13px;
+  }
+}
+
+/* ================= 📱 SMALL MOBILE ================= */
+@media (max-width: 420px) {
 
   .form-header,
   .head,
@@ -302,39 +178,8 @@
     font-size: 22px;
   }
 
-  .input-group1 {
-    margin-bottom: 20px;
-  }
-
-  .input-group1 input {
+  .button {
+    border-radius: 40px;
     font-size: 13px;
-  }
-
-  .button {
-    width: calc(100% - 40px);
-    margin-left: 20px;
-    padding: 14px;
-    font-size: 12px;
-  }
-
-  .close {
-    font-size: 12px;
-  }
-}
-
-
-/* ================= 📱 SMALL MOBILE (360px) ================= */
-@media (max-width: 360px) {
-  .head h2 {
-    font-size: 20px;
-  }
-
-  .button {
-    font-size: 11px;
-    padding: 12px;
-  }
-
-  .input-group1 input {
-    font-size: 12px;
   }
 }
