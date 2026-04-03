@@ -221,79 +221,84 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
+/* ================= 📱 RESPONSIVE OPTIMIZATION ================= */
 
-/* ================= 📱 RESPONSIVE (Remains the same) ================= */
-@media (max-width: 1024px) {
-  .reach-wrapper { flex-direction: column; max-width: 500px; }
-  .reach-wrapper::after { display: none; }
-  .reach-panel { padding: 40px 30px; }
-  .back-link { position: static; margin-bottom: 15px; }
-}
-/* ... rest of your responsive code ... */
-
-/* ================= 📱 RESPONSIVE ================= */
-
-/* TABLET */
 @media (max-width: 1024px) {
   .reach-wrapper {
-    flex-direction: column;
-    max-width: 500px;
+    flex-direction: column; /* Stack vertically */
+    max-width: 550px;
+    min-height: auto;
+    margin: 20px auto;
   }
 
-  .reach-wrapper::after {
+  /* Move the Welcome Message to the Top instead of hiding it */
+  .reach-wrapper::after { /* Puts image/welcome at the top */
+    flex: none;
     display: none;
+    height: 200px;
+    width: 100%;
+    font-size: 18px;
+    padding: 20px;
+    content: "Welcome Back"; /* Shorter text for mobile */
   }
 
   .reach-panel {
     padding: 40px 30px;
+    flex: none;
+    width: 100%;
   }
 
   .back-link {
-    position: static;
-    margin-bottom: 15px;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 20px;
+    display: inline-block;
   }
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+  .reach-viewport {
+    padding: 23px;
+  }
+
+  .reach-wrapper {
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05); /* Softer shadow for mobile */
+  }
+  .tech-bg{
+    display: none;
+    
+  }
+
   .reach-panel {
-    padding: 35px 25px;
+    padding: 40px 20px;
   }
 
   .header-zone h2 {
     font-size: 24px;
-    text-align: center;
-  }
-
-  .subtitle {
-    text-align: center;
-  }
-
-  .neon-btn {
-    width: 100%;
-  }
-}
-
-/* SMALL MOBILE */
-@media (max-width: 480px) {
-  .reach-viewport {
-    padding: 10px;
-  }
-
-  .reach-panel {
-    padding: 30px 20px;
-  }
-
-  .header-zone h2 {
-    font-size: 22px;
   }
 
   .data-field input {
     padding: 14px;
-    font-size: 13px;
+    font-size: 14px;
   }
 
-  .console-msg {
-    font-size: 13px;
+  .neon-btn {
+    padding: 14px;
+    font-size: 14px;
+    margin-top: 10px;
   }
 }
+
+/* Fix for small height screens / Landscape */
+/* @media (max-height: 700px) and (max-width: 1024px) {
+  .reach-viewport {
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+  .reach-wrapper {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+} */
