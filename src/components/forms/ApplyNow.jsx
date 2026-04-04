@@ -51,9 +51,6 @@ const ApplyNow = () => {
       <div className="split-container">
         <div className="form-section">
           <header className="form-header">
-            <div className="step-indicator">
-              <span className="step-label">MelaninBlind</span>
-            </div>
 
             <span className="back-btn" onClick={() => window.history.back()}>
               ← Back
