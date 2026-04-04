@@ -42,6 +42,15 @@ const Clinicalpilot = () => {
       desc: "Aligned with CDSCO Class B in India and FDA 510(k) pathways via established impedance-based precedents.",
     },
   ];
+  const scrollToPartner = () => {
+  const element = document.getElementById("partner");
+  if (element) {
+    element.scrollIntoView({ 
+      behavior: "smooth", 
+      block: "start" 
+    });
+  }
+};
 
   return (
     <>
@@ -99,8 +108,8 @@ const Clinicalpilot = () => {
 
           {/* CTA Button */}
           <div className="clinical-cta">
-            <button className="apply-btn">
-              Apply for clinical pilot participation →
+             <button className="apply-btn" onClick={scrollToPartner}>
+              Apply for the Clinical Pilot →
             </button>
           </div>
 
